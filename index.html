@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" async></script>
+	<script src="js/app.js" defer type="module"></script>
+	<title>Inventario CampusLands</title>
+</head>
+<body>
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand"><img src="images/logo.png" width="60px" alt="logo">CampusLands</a>
+		<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> ACTIVOS</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<button onclick="mostrarCategorias()" class="boton"><a href="#" ><i class='bx bxs-inbox icon'></i> Categoria Activo <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(0)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(0)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(0)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(0)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<button onclick="mostrarProveedores()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Proveedor <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(1)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(1)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(1)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(1)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<button onclick="mostrarTiposActivo()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Tipo Activo <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(2)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(2)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(2)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(2)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<button onclick="mostrarMarcas()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Marcas <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(3)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(3)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(3)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(3)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			<li>
+				<button onclick="mostrarEstadoActivos()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Estado <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(4)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(4)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(4)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(4)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<button onclick="mostrarTiposPersona()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Tipo Persona </p><i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(5)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(5)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(5)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(5)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<button onclick="mostrarPersonas()" class="boton"><a href="#"><i class='bx bxs-inbox icon' ></i> Personas <i class='bx bx-chevron-right icon-right' ></i></a></button>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(6)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(6)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(6)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(6)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i><p onclick="mostrarTelefonosPersona()"> Telefono Persona </p><i class='bx bx-chevron-right icon-right' ></i></a>
+				<br><br>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar(7)" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(7)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(7)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(7)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Tipo de Movimiento <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar()" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar()" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar()" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar()" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Detalle de Moviemiento <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar()" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar()" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar()" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar()" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Historial de Activo <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardAgregar()" title="Agregar" value="Agregar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar()" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar()" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar()" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon' ></i><p onclick="mostrarAsignacion()"></p> Asignacion </p><i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><input type="button" onclick="mostrarDashboardCrear(0)" title="Crear" value="Crear" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardAsignar(0)" title="Asignar" value="Asignar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardRetornar(0)" title="Retornar" value="Retornar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEditar(8)" title="Editar" value="Editar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardEliminar(8)" title="Eliminar" value="Eliminar" class="botonCategoria"></input></li>
+					<li><input type="button" onclick="mostrarDashboardBuscar(8)" title="Buscar" value="Buscar" class="botonCategoria"></input></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar' ></i>
+			<form action="#">
+				
+			</form>
+			
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a href="#"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<h1 class="title">INVENTARIO DE ACTIVOS DE CAMPUSLANDS</h1>
+			<div id="data">
+				<div class="content-data">
+					<!-- conteido -->
+					<!-- categorias -->
+					<div id="categorias"> 
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Categoria</h3>
+							</div>
+							<div>
+								<div>
+									<label for="nombreCategoria">Nombre de la categoria del activo:</label>
+									<br>
+									<input type="text" name="categoria" size="40" id="nombreCategoria">
+								</div>
+								<br>
+								<div>
+									<button class="boton" onclick="agregarCategoria()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Categoria</h3>
+							</div>
+							<div>
+								<label for="idBusquedaEditar">Introducir busqueda:</label>
+								<br>
+								<input type="text" name="infoBusquedaEditar" size="20%" id="idBusquedaEditar" placeholder="Ingrese el ID de la categoria">
+							</div>
+							
+							<label for="nuevoNombreCategoria">Nuevo Nombre:</label>
+							<br>
+							<input type="text" id="nuevoNombreCategoria" name="nuevoNombreCategoria">
+							<br>
+							
+							<br>
+							<button type="button" onclick="editarCategoria()">Editar Activo</button>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Categoria</h3>
+							</div>
+							<label for="idBusquedaEliminar">Eliminar Categoria:</label>
+							<input type="text" id="idBusquedaEliminar" name="idBusquedaEliminar">
+
+							<button type="button" onclick="eliminarCategoria()">Eliminar categoria</button>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Categoria</h3>
+							</div>
+							<label for="idBusqueda">Buscar Categoria:</label>
+								<input type="text" id="idBusqueda" name="idBusqueda">
+	
+								<button type="button" onclick="buscarCategoria()">Buscar categoria</button>
+							<div id="contenido">
+							</div>
+						</form>
+					</div>
+					<!-- proveedores -->
+					<div id="proveedores">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Proveedor</h3>
+							</div>
+							<div>
+								<div>
+									<label for="idProveedor">CC o NIT del proveedor del activo:</label>
+									<br>
+									<input type="text" name="proveedor" size="40" id="idProveedor">
+								</div>
+								<div>
+									<label for="nombreProveedor">Nombre del proveedor del activo:</label>
+									<br>
+									<input type="text" name="proveedor" size="40" id="nombreProveedor">
+								</div>
+								<div>
+									<label for="email">Ingrese el email del proveedor:</label>
+									<br>
+									<input type="email" id="emailProveedor" name="emailProveedor">
+								</div>
+								<div>
+									<button onclick="agregarProveedor()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Proveedor</h3>
+							</div>
+							<div id="listaProveedores">
+								Lista de Proveedores
+							</div>
+							<br>
+							<div>
+								<label for="iddeProveedor">Seleccione el ID del proveedor</label>
+								<br>
+								<select id="iddeProveedor">
+								</select>
+							</div>
+							<label for="nuevoIdProveedor">Nueva Identificacion de proveedor:</label>
+							<br>
+							<input type="text" id="nuevoIdProveedor" name="nuevoIdProveedor">
+							<br>
+							<label for="nuevoNombreProveedor">Nuevo Nombre:</label>
+							<br>
+							<input type="text" id="nuevoNombreProveedor" name="nuevoNombreProveedor">
+							<br>
+							<label for="nuevoEmailProveedor">Nuevo email de proveedor:</label>
+							<br>
+							<input type="text" id="nuevoEmailProveedor" name="nuevoEmailProveedor">
+							<br>
+							<button type="button" onclick="editarProveedor()">Editar proveedor</button>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Proveedor</h3>
+							</div>
+							<div id="listaProveedores2">
+								Lista de Proveedores
+							</div>
+							<label for="idProveedorEliminar">Seleccione el ID del proveedor que desea eliminar</label>
+							<br>
+							<select id="idProveedorEliminar">
+							</select>
+							<button type="button" onclick="eliminarProveedor()">Eliminar proveedor</button>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Proveedor</h3>
+							</div>
+							<label for="idProveedorBuscar">Seleccione el ID del proveedor que desea buscar</label>
+							<br>
+							<select id="idProveedorBuscar">
+							</select>
+							<button type="button" onclick="buscarProveedor()">Buscar Proveedor</button>
+							<br>
+							<div id="contenidoBuscarProveedor">
+							</div>
+						</form>
+					</div>
+					<!-- Tipo de Activo -->
+					<div id="tiposActivo">
+						
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Tipo de Activo</h3>
+							</div>
+							<div id="listaCategorias">
+								Lista de Categorias<br>
+							</div>
+							<div>
+								<div>
+									<label for="categoriaTipo">Seleccione el nombre de la categoria a la que pertenecerá el tipo de activo:</label>
+									<br>
+									<select id="categoriaTipo">
+									</select>
+								</div>
+								<div>
+									<label for="nombreTipoActivo">Nombre del tipo de activo:</label>
+									<br>
+									<input type="text" name="categoria" size="40" id="nombreTipoActivo">
+								</div>
+								<div>
+									<button onclick="agregarTipoActivo()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Tipo de Activo</h3>
+							</div>
+							<div id="listaTipoActivos">
+								Lista de Tipos de Activo
+							</div>
+							<br>
+							<div>
+								<label for="idTipoActivo">Seleccione el ID del tipo de activo</label>
+								<br>
+								<select id="idTipoActivo">
+								</select>
+							</div>
+							<label for="nuevoNombreCategoria2">Nueva Categoria:</label>
+							<br>
+							<input type="text" id="nuevoNombreCategoria2" name="nuevoNombreCategoria2">
+							<br>
+							<label for="nuevoNombreActivo">Nuevo Nombre:</label>
+							<br>
+							<input type="text" id="nuevoNombreActivo" name="nuevoNombreActivo">
+							<br>
+							
+							<br>
+							<button type="button" onclick="editarTipoActivo()">Editar Activo</button>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Tipo de Activo</h3>
+							</div>
+							<div id="listaTipoActivos2">
+								Lista de Tipos de Activo
+							</div>
+							<br>
+							<label for="idTipoActivo2">Seleccione el ID del tipo de activo que desea eliminar</label>
+							<br>
+							<select id="idTipoActivo2">
+							</select>
+							<button type="button" onclick="eliminarTipoActivo()">Eliminar Tipo de Activo</button>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Tipo de Activo</h3>
+							</div>
+							<label for="idTipoActivo3">Seleccione el ID del tipo de activo que desea buscar</label>
+							<br>
+							<select id="idTipoActivo3">
+							</select>
+							<button type="button" onclick="buscarTipoActivo()">Buscar Tipo de Activo</button>
+							<div id="contenidoBuscarTipoActivo">
+							</div>
+						</form>
+					</div>
+					<!-- Marcas de Activo -->
+					<div id="marcas">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Marca del Activo</h3>
+							</div>
+							<div>
+								<div>
+									<label for="marcaTipoActivo">Seleccione un tipo de activo</label>
+									<br>
+									<select id="marcaTipoActivo">
+									</select>
+								</div>
+								<div>
+									<label for="nombreMarca">Nombre de la marca del activo:</label>
+									<br>
+									<input type="text" name="marca" size="40" id="nombreMarca">
+								</div>
+								<div>
+									<button onclick="agregarMarca()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Marca del Activo</h3>
+							</div>
+							<div id="listaMarcas">
+								Lista de Marcas
+							</div>
+							<div>
+								<label for="idMarca">Seleccione el ID de la marca</label>
+								<br>
+								<select id="idMarca">
+								</select>
+								<br>
+								<label for="nuevoNombreTipoActivo">Nuevo tipo de activo:</label>
+								<br>
+								<input type="text" id="nuevoNombreTipoActivo" name="nuevoNombreTipoActivo">
+								<br>
+								<label for="nuevoNombreMarca">Nuevo Marca:</label>
+								<br>
+								<input type="text" id="nuevoNombreMarca" name="nuevoNombreMarca">
+								<br>
+							</div>
+							<div>
+								<button onclick="editarMarca()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Marca del Activo</h3>
+							</div>
+							<div id="listaMarcas2">
+								Lista de Marcas
+							</div>
+							<label for="idMarca2">Seleccione el ID de la marca a eliminar</label>
+								<br>
+								<select id="idMarca2">
+								</select>
+								<div>
+									<button onclick="eliminarMarca()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Marca del Activo</h3>
+							</div>
+							<label for="idMarca3">Seleccione el ID de la marca a buscar</label>
+								<br>
+								<select id="idMarca3">
+								</select>
+								
+							<button type="button" onclick="buscarMarca()">Buscar categoria</button>
+							<div id="contenidoBuscarMarca">
+							</div>
+						</form>
+					</div>
+					<!-- Estado del Activo -->
+					<div id="estadoActivos">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Estado de Activo</h3>
+							</div>
+							<div>
+								<div>
+									<label for="nombreEstado">Nombre del estado de activo:</label>
+									<br>
+									<input type="text" name="estado" size="40" id="nombreEstado">
+								</div>
+								<div>
+									<button onclick="agregarEstado()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Estado de Activo</h3>
+							</div>
+							<div id="listaEstados">
+								Lista de Estados
+							</div>
+							<div>
+								<label for="idEstado">Seleccione el ID del Estado</label>
+								<br>
+								<select id="idEstado">
+								</select>
+								<br>
+								<label for="nuevoNombreEstado">Nuevo Estado:</label>
+								<br>
+								<input type="text" id="nuevoNombreEstado" name="nuevoNombreEstado">
+								<br>
+							</div>
+							<div>
+								<button onclick="editarEstado()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Estado de Activo</h3>
+							</div>
+							<div id="listaEstados2">
+								Lista de Estados
+							</div>
+							<label for="idEstado2">Seleccione el ID del estado a eliminar</label>
+								<br>
+								<select id="idEstado2">
+								</select>
+								<div>
+									<button onclick="eliminarEstado()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Estado de Activo</h3>
+							</div>
+							<label for="idEstado3">Seleccione el ID del estado de activo a buscar</label>
+								<br>
+								<select id="idEstado3">
+								</select>
+								
+							<button type="button" onclick="buscarEstado()">Buscar Estado</button>
+							<div id="contenidoBuscarEstado">
+							</div>
+						</form>
+					</div>
+					<!-- Tipo de Persona -->
+					<div id="tiposPersona">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Tipo de Persona</h3>
+							</div>
+							<div>
+								<div>
+									<label for="nombreTipoPersona">Nombre del tipo de persona:</label>
+									<br>
+									<input type="text" size="40" id="nombreTipoPersona">
+								</div>
+								<div>
+									<button onclick="agregarTipoPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Tipo de Persona</h3>
+							</div>
+							<div id="listaTipoPersonas">
+								Lista de Tipos de persona
+							</div>
+							<div>
+								<label for="idTipoPersonas">Seleccione el ID del tipo de persona</label>
+								<br>
+								<select id="idTipoPersonas">
+								</select>
+								<br>
+								<label for="nuevoNombreTipoPersona">Nuevo Tipo de Persona:</label>
+								<br>
+								<input type="text" id="nuevoNombreTipoPersona" name="nuevoNombreTipoPersona">
+								<br>
+							</div>
+							<div>
+								<button onclick="editarTipoPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Tipo de Persona</h3>
+							</div>
+							<div id="listaTipoPersonas2">
+								Lista de Tipos de Persona
+							</div>
+							<label for="idTipoPersonas2">Seleccione el ID del tipo de persona a eliminar</label>
+								<br>
+								<select id="idTipoPersonas2">
+								</select>
+								<div>
+									<button onclick="eliminarTipoPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Tipo de Persona</h3>
+							</div>
+							<label for="idTipoPersonas3">Seleccione el ID del tipo de persona a buscar</label>
+								<br>
+								<select id="idTipoPersonas3">
+								</select>
+								
+							<button type="button" onclick="buscarTipoPersona()">Buscar Tpo de Persona</button>
+							<div id="contenidoBuscarTipoPersonas">
+							</div>
+						</form>
+					</div>
+					<!-- Personas -->
+					<div id="personas">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Persona</h3>
+							</div>
+							<div>
+								<div>
+									<label for="idPersonas">Id de la persona (CC, Nit):</label>
+									<br>
+									<input type="text" name="personas" size="40" id="idPersonas">
+								</div>
+								<div>
+									<label for="nombrePersonas">Nombre de la persona:</label>
+									<br>
+									<input type="text" name="personas" size="40" id="nombrePersonas">
+								</div>
+								<div>
+									<label for="emailPersonas">Email de la persona:</label>
+									<br>
+									<input type="email" name="persona" size="40" id="emailPersonas">
+								</div>
+								<label for="tipoPersonas">Seleccione el tipo de persona:</label>
+								<br>
+								<select id="tipoPersonas">
+								</select>
+								<div>
+									<button onclick="agregarPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Persona</h3>
+							</div>
+							<div id="listaPersonas">
+								Lista de Personas
+							</div>
+							<div>
+								<label for="idPersonas2">Seleccione el Id de la persona</label>
+								<br>
+								<select id="idPersonas2">
+								</select>
+								<br>
+								<label for="nuevaIdentPersona">Nueva identificacion de Persona:</label>
+								<br>
+								<input type="text" id="nuevaIdentPersona" name="nuevaIdentPersona">
+								<br>
+								<label for="nuevoNombrePersona">Nuevo nombre de Persona:</label>
+								<br>
+								<input type="text" id="nuevoNombrePersona" name="nuevoNombrePersona">
+								<br>
+								<label for="nuevoEmailPersona">Nuevo Email de la persona:</label>
+								<br>
+								<input type="email" name="persona" size="40" id="nuevoEmailPersona">
+								<br>
+								<label for="nuevoTipoPersonas">Agregue el nuevo tipo de persona:</label>
+								<br>
+								<input type="text" name="persona" size="40" id="nuevoTipoPersonas">
+							</div>
+							<div>
+								<button onclick="editarPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Persona</h3>
+							</div>
+							<div id="listaPersonas2">
+								Lista de Tipos de Persona
+							</div>
+							<label for="idPersonasEliminar">Seleccione el ID del tipo de persona a eliminar</label>
+							<br>
+							<select id="idPersonasEliminar">
+							</select>
+							<div>
+								<button onclick="eliminarPersona()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+							</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Persona</h3>
+							</div>
+							<label for="idPersonasBuscar">Seleccione el ID del tipo de persona a buscar</label>
+								<br>
+								<select id="idPersonasBuscar">
+								</select>
+								
+							<button type="button" onclick="buscarPersona()">Buscar Tpo de Persona</button>
+							<div id="contenidoBuscarPersonas">
+							</div>
+						</form>
+					</div>
+					<!-- Telefono Personas -->
+					<div id="telefonosPersona">
+						<form class="dashboardAgregar" style="display : none">
+							<div class="head">
+								<h3>Agregar Teléfono Persona</h3>
+							</div>
+							<div>
+								<div>
+									<label for="idTelefono">Id del número telefónico de la persona:</label>
+									<br>
+									<input type="text" name="telefono" size="40" id="idTelefono">
+								</div>
+								<div>
+									<label for="numeroTelefono">Número de teléfono de la persona:</label>
+									<br>
+									<input type="text" name="telefono" size="40" id="numeroTelefono">
+								</div>
+								<div>
+									<label for="ubicacionTelefono">Ubicacion del teléfono de la persona:</label>
+									<br>
+									<input type="text" name="telefono" size="40" id="ubicacionTelefono">
+								</div>
+								<div>
+									<label for="idPersonasTel">Número de Id de la persona:</label>
+									<br>
+									<input type="text" name="telefono" size="40" id="idPersonasTel">
+								</div>
+								<div>
+									<button onclick="agregarActivo()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Teléfono de Persona</h3>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Teléfono de Persona</h3>
+							</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Teléfono de Persona</h3>
+							</div>
+						</form>
+					</div>
+					<!-- _____________________________________Asignacion___________________________________ -->
+					<div id="asignaciones">
+						<form class="dashboardCrear" style="display : none">
+							<div class="head">
+								<h3>Crear Asignacion</h3>
+							</div>
+							<div>
+								
+								<div>
+									<label for="nombreResponsable">Nombre del Responsable:</label>
+									<br>
+									<input type="text" name="nombreRespon" size="40" id="nombreResponsable">
+								</div>
+								<div>
+									<label for="cedulaResponsable">Cedula del responsable:</label>
+									<br>
+									<input type="text" name="cedulaRespon" size="40" id="cedulaResponsable">
+								</div>
+								<div>
+									<button onclick="agregarAsignacion()"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+								</div>
+							</div>
+						</form>
+						<form class="dashboardAsignar" style="display: none">
+							<div class="head5">
+								<h3>Asignar</h3>
+								
+									<div>
+										<label for="documentoResponsable">Documento del Responsable:</label>
+										<br>
+										<input type="text" name="documentoRespon" size="40" id="documentoResponsable">
+										<button onclick="asignarAsignacion(event)"><img src="images/flechaAbajo.png" alt="flechaAbajo" id="flechaAbajo"></button>
+									</div>
+									<div id="asignarEspacio"></div>
+									
+									<div class="deAgregar" style="display: none">
+										<label for="idActivo">Id del activo a asignar:</label>
+										<br>
+										<input type="text" name="idActivo" size="40" id="idActivo">
+										<br>
+										<label for="fechaAsignacion">Fecha de la asignacion:</label>
+										<br>
+										<input type="date" name="fecha" size="40" id="fechaAsignacion">
+										<br>
+										
+									</div>
+									
+									<div id="botonGuardar"></div>
+									<div id="activosAsignar"></div>
+							</div>
+							
+						</form>
+						<form class="dashboardRetornar" style="display: none">
+							<div class="head">
+								<h3>Retornar</h3>
+							</div>
+						</form>
+						<form class="dashboardEditar" style="display: none">
+							<div class="head">
+								<h3>Editar Asignacion</h3>
+							</div>
+						</form>
+						<form class="dashboardEliminar" style="display: none">
+							<div class="head">
+								<h3>Eliminar Asignacion</h3>
+							</div>
+						</form>
+						<form class="dashboardBuscar" style="display: none">
+							<div class="head">
+								<h3>Buscar Asignacion</h3>
+							</div>
+						</form>
+					</div>
+				<!-- </div> -->
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+</body>
+</html>
